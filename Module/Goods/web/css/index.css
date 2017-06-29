@@ -1,0 +1,53 @@
+table tr:nth-child(2n-1) {
+    background-color: deepskyblue;
+}
+
+table {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+
+table td {
+    text-align: center;
+    font-weight: bold;
+    width: 98px;
+    height: 30px;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.tr1 td {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+td:nth-child(2) {
+    width: 130px;
+}
+
+td:nth-child(4) {
+    width: 150px;
+}
+
+#addOrEdit {
+    background-color: gray;
+    width: 520px;
+}
+
+.cancle {
+    position: relative;
+    left: 340px;
+}
+
+.save {
+    position: relative;
+    left: 110px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+input:hover {
+    cursor: pointer;
+}

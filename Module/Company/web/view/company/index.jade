@@ -1,0 +1,28 @@
+extends ../../../../../views/layout
+
+block content
+  form(id='searchForm',role='form',action='',method='post')
+    h1= title
+    p Welcome to #{title}
+    br
+    input#name(type='text' name='name' placeholder='请输入商城名称')
+    input#select(type='button' name='btn' value='查询')
+    input#insert(type='button' name='btn' value='新增' data-toggle="modal" data-target="#myModal") 
+    br
+    br
+    table
+      tr.tr1
+          td 编号
+          td 商场名称
+          td 商场地址
+          td 商场编号
+          td 操作
+      - each companyies in dataList
+          tr
+            td #{companyies.id}
+            td #{companyies.name}
+            td #{companyies.address}
+            td #{companyies.regisNum}
+            td 
+                input(id='#{companyies.id}').update(type='button' name='update' value='修改')
+                input(id='#{companyies.id}').delete(type='button' name='delete' value='删除')

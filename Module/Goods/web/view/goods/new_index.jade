@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/Goods/web/css/index.css')
+    script(type='text/javascript', src="javascripts/jquery-1.10.2.min.js")
+    script(type='text/javascript', src="javascripts/bootstrap.min.js")
+    script(type='text/javascript', src="javascripts/bootbox.js")
+    script(type='text/javascript', src="/Goods/web/controller/index.js")
+body
+    form(id='searchGoods',role='form',action='',method='post')
+        h1= title
+        p Welcome to #{title}
+        br
+        input#name(type='text' name='name' placeholder='请输入商品名称' style="cursor:auto !important;")
+        input#select(type='button' name='btn' value='查询' style="margin-left:10px;background-color:green;color:white;")
+        input#insert(type='button' name='btn' value='新增' style="margin-left:10px;background-color:blue;color:white;" data-toggle="modal" data-target="#myModal") 
+        input#fanhui(type='button' name='btn' value='返回首页' style="margin-left:240px;background-color:purple;color:white;") 
+        br
+        br
+        table
+        tr.tr1
+            td 编号
+            td 商品名称
+            td 商品价格
+            td 商品描述
+            td 操作
+        - each goods in dataList
+            tr
+                td #{goods.gid}
+                td #{goods.gname}
+                td #{goods.gprice}￥
+                td #{goods.gdescrition}
+                td 
+                    input(id='#{goods.id}').update(type='button' name='update' value='修改' style="margin-left:5px;background-color:black;color:white;")
+                    input(id='#{goods.id}').delete(type='button' name='delete' value='删除' style="margin-left:5px;background-color:red;color:white;")
+    
