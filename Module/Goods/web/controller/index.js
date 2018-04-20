@@ -2,7 +2,7 @@ $(function() {
     //点击返回
     $("#fanhui").click(function() {
         $.get('/', function(data) {
-            location.href = "http://localhost:4000/";
+            location.href = "http://localhost:9603/";
         })
     })
 
